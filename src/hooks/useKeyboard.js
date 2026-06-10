@@ -19,6 +19,10 @@ export function useKeyboard() {
 
   useEffect(() => {
     const onKey = (e) => {
+      // Ignore toutes les touches si le focus est sur un champ de saisie
+      const tag = document.activeElement?.tagName?.toLowerCase()
+      if (tag === 'input' || tag === 'textarea' || tag === 'select') return
+
       if (KEY_MAP[e.key]) {
         e.preventDefault()
         if (phase === 'playing' || phase === 'paused') {
@@ -33,3 +37,4 @@ export function useKeyboard() {
     return () => window.removeEventListener('keydown', onKey)
   }, [phase, setDirection, pauseGame])
 }
+

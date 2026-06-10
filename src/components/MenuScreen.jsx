@@ -57,8 +57,8 @@ export default function MenuScreen() {
       {/* Titre */}
       <div ref={titleRef} style={styles.titleBlock}>
         <div style={styles.titleTop}>SNAKE</div>
-        <div style={styles.titleBottom}>ÉVOLUTION</div>
-        <div style={styles.titleSub}>MODE LABYRINTHE</div>
+        <div style={styles.titleBottom}>GAME</div>
+        {/* <div style={styles.titleSub}>MODE LABYRINTHE</div> */}
       </div>
 
       {/* Carte centrale */}
